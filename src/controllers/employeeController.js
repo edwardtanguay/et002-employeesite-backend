@@ -8,7 +8,11 @@ export const getEmployees = (req, res) => {
 
 export const addEmployee = (req, res) => {
 	const employee = { ...req.body.employee };
-	employee.id = Math.floor(Math.random() * 1000);
+	const rawEmployees = fs.readFileSync('./src/data/employees.json', 'utf8');
+	const employees = JSON.parse(rawEmployees);
+	employees.push(employee);
+	employee.id = 999;
+	fs.writeFileSync('./src/data/employees.json', JSON.stringify(employees, null, 2));
 	res.send({
 		message: 'ok',
 		employeeAdded: employee
