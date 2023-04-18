@@ -1,18 +1,16 @@
-import fs from 'fs';
 import express from 'express';
+import { getEmployees, addEmployee } from './controllers/employeeController.js';
 
 const app = express();
+app.use(express.json());
 const port = 3333;
 
 app.get('/', (req, res) => {
-	res.send('EMPLOYEE API');
+	res.send('COMPANY API');
 });
 
-app.get('/employees', (req, res) => {
-	const rawEmployees = fs.readFileSync('./src/data/employees.json', 'utf8');
-	const employees = JSON.parse(rawEmployees);
-	res.send(employees);
-});
+app.get('/employees', getEmployees);
+app.post('/employee', addEmployee);
 
 app.listen(port, () => {
 	console.log(`listening at http://localhost:${port}`);

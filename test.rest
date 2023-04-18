@@ -5,3 +5,16 @@
 
 ### EMPLOYEES
 {{url}}/employees
+
+### ADD EMPLOYEE
+POST {{url}}/employee
+content-type: application/json
+
+{
+	"employee": {
+		"firstName": "Hans",
+		"lastName": "Schmidt",
+		"title": "Developer",
+		"age": 33
+	}
+}
