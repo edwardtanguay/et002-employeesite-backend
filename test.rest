@@ -1,0 +1,7 @@
+@url = http://localhost:3333
+
+### BASE
+{{url}}
+
+### EMPLOYEES
+{{url}}/employees
