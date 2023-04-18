@@ -12,9 +12,9 @@ content-type: application/json
 
 {
 	"employee": {
-		"firstName": "Hans",
-		"lastName": "Schmidt",
+		"firstName": "hans",
+		"lastName": "reinerson",
 		"title": "Developer",
-		"age": 33
+		"age": "22" 
 	}
 }
