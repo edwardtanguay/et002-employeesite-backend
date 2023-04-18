@@ -2,9 +2,11 @@ import express from 'express';
 import { getEmployees, addEmployee } from './controllers/employeeController.js';
 import { sanitizeName, sanitizeAge } from './middleware/employeeSanitizers.js';
 import { validateFirstName, validateLastName, validateAge } from './middleware/employeeValidators.js';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const port = 3333;
 
 app.get('/', (req, res) => {
